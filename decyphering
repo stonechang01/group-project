@@ -10,4 +10,9 @@ b = b.replace(",", " ")
 b = b.split(" ")
 print(b)
 
+D={}
 
+for i in a:
+     D[i]=1
+
+D.keys=a

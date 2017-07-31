@@ -8,7 +8,23 @@ for x in a:
 b = b.replace(" ", "")
 b = b.replace(",", " ")
 b = b.split(" ")
-print(b)
+
+def findStart(i):
+    start = ""
+    for x in b:
+        rtn = x[:i]
+        for y in b:
+            if (rtn in y[1:]):
+                break
+            elif (y == b[len(b)-1]):
+                start = rtn
+    return start
+
+
+c = 2
+start = findStart(c)
+
+print(start)
 
 D={}
 

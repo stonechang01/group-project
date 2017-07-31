@@ -9,3 +9,4 @@ b = b.replace(",", "")
 b = b.split(" ")
 print(b)
 
+

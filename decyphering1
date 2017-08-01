@@ -1,13 +1,4 @@
-file = open("/share/data/day5/puzzle2.txt")
-a = file.readlines()
-for x in range(len(a)):
-        a[x] = a[x].strip()
-b = ""
-for x in a:
-        b += x
-b = b.replace(" ", "")
-b = b.replace(",", " ")
-b = b.split(" ")
+b=["ABCDEFGHIJK","EFGHIJKLMNOP","BCDEFGHIJKL","OPQRSTUVWXYZ","OPQRSTUVWXYZ","KLMNOPQRSTUV"]
 
 def findStart(i):
     start = ""
@@ -21,7 +12,7 @@ def findStart(i):
     return start
 
 
-c = 2
+c = 8
 start = findStart(c)
 
 print(start)

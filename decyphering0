@@ -21,7 +21,19 @@ def findStart(i):
     return start
 
 
-c = 2
+c = 14
 start = findStart(c)
 
 print(start)
+
+D={}
+
+for i in a:
+     D[i]=1
+
+a=D.keys
+
+
+
+#for i in range(len(a)):
+#     if (

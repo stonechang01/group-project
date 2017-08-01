@@ -1,18 +1,36 @@
-b=["ABCDEFGHIJK","EFGHIJKLMNOP","BCDEFGHIJKL","OPQRSTUVWXYZ","OPQRSTUVWXYZ","KLMNOPQRSTUV"]
+#b=["ABCDEFGHIJKLMNO","EFGHIJKLMNOPQRS","CDEFGHIJKLMNOPQ","LMNOPQRSTUVWXYZ","LMNOPQRSTUVWXYZ","KLMNOPQRSTUVWXY"]
+file = open("/share/data/day5/puzzle2.txt")
+a = file.readlines()
+for x in range(len(a)):
+        a[x] = a[x].strip()
+b = ""
+for x in a:
+        b += x
+b = b.replace(" ", "")
+b = b.replace(",", " ")
+b = b.split(" ")
 
-def findStart(i):
-    start = ""
-    for x in b:
-        rtn = x[:i]
-        for y in b:
-            if (rtn in y[1:]):
-                break
-            elif (y == b[len(b)-1]):
-                start = rtn
-    return start
 
 
-c = 8
-start = findStart(c)
+start = "MGLRYS"
+final=""
+final = final + start
 
-print(start)
+for i in range(len(b)):
+     for d in range(12):
+          if (final[len(final)-4] == b[i][d]):
+               if (final[len(final)-3] == b[i][d+1]):
+                    if (final[len(final)-2] == b[i][d+2]):
+                         if (final[len(final)-1] == b[i][d+3]):
+                              final = final + b[i][d+4:len(b[i])+1]
+for i in range(len(b)):
+     for d in range(13):
+          if (final[len(final)-3] == b[i][d]):
+               if (final[len(final)-2] == b[i][d+1]):
+                    if (final[len(final)-1] == b[i][d+2]):
+                         final = final + b[i][d+3:len(b[i])+1]
+
+
+
+
+print final

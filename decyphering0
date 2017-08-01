@@ -21,7 +21,7 @@ def findStart(i):
     return start
 
 
-c = 14
+c = 1
 start = findStart(c)
 
 print(start)

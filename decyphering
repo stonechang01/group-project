@@ -26,3 +26,9 @@ start = findStart(c)
 
 print(start)
 
+D={}
+
+for i in a:
+     D[i]=1
+
+D.keys=a

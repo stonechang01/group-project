@@ -1,0 +1,3 @@
+a=['sladkfj', 'ldkgjdkf', 'lsdkj']
+
+print a[0[0]]

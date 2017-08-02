@@ -1,21 +1,36 @@
-#b=["ABCDEFGHIJKLMNO","EFGHIJKLMNOPQRS","CDEFGHIJKLMNOPQ","LMNOPQRSTUVWXYZ","LMNOPQRSTUVWXYZ","KLMNOPQRSTUVWXY"]
-file = open("/share/data/day5/puzzle2.txt")
+file = open("/share/data/day5/puzzle.txt")
 a = file.readlines()
 for x in range(len(a)):
         a[x] = a[x].strip()
-b = ""
+f = ""
 for x in a:
-        b += x
-b = b.replace(" ", "")
-b = b.replace(",", " ")
-b = b.split(" ")
+        f += x
+f = f.replace(" ", "")
+f = f.replace(",", " ")
+f = f.split(" ")
+
+final = ""
+dict = {}
+for i in f:
+    dict[i] = 1
+b = []
+for i in dict.keys():
+    b.append(i)
+def findStart(i):
+    start = ""
+    for x in b:
+        rtn = x[:i]
+        for y in f:
+            if (rtn in y[1:]):
+                break
+            elif (y == f[len(f)-1]):
+                start = x
+    return start
 
 
-
-start = "MGLRYS"
+start = findStart(5)
 final=""
 final = final + start
-
 
 for i in range(len(b)):
      for d in range(11):

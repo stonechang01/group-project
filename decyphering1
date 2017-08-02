@@ -1,0 +1,46 @@
+#b=["ABCDEFGHIJKLMNO","EFGHIJKLMNOPQRS","CDEFGHIJKLMNOPQ","LMNOPQRSTUVWXYZ","LMNOPQRSTUVWXYZ","KLMNOPQRSTUVWXY"]
+file = open("/share/data/day5/puzzle2.txt")
+a = file.readlines()
+for x in range(len(a)):
+        a[x] = a[x].strip()
+b = ""
+for x in a:
+        b += x
+b = b.replace(" ", "")
+b = b.replace(",", " ")
+b = b.split(" ")
+
+
+
+start = "MGLRYS"
+final=""
+final = final + start
+
+
+for i in range(len(b)):
+     for d in range(11):
+          if (final[len(final)-5] == b[i][d]):
+               if (final[len(final)-4] == b[i][d+1]):
+                    if (final[len(final)-3] == b[i][d+2]):
+                         if (final[len(final)-2] == b[i][d+3]):
+                              if (final[len(final)-1] == b[i][d+4]):
+                                   final = final + b[i][d+5:len(b[i])+1]
+
+for i in range(len(b)):
+     for d in range(12):
+          if (final[len(final)-4] == b[i][d]):
+               if (final[len(final)-3] == b[i][d+1]):
+                    if (final[len(final)-2] == b[i][d+2]):
+                         if (final[len(final)-1] == b[i][d+3]):
+                              final = final + b[i][d+4:len(b[i])+1]
+for i in range(len(b)):
+     for d in range(13):
+          if (final[len(final)-3] == b[i][d]):
+               if (final[len(final)-2] == b[i][d+1]):
+                    if (final[len(final)-1] == b[i][d+2]):
+                         final = final + b[i][d+3:len(b[i])+1]
+
+
+          
+
+print final

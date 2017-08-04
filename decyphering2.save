@@ -1,0 +1,81 @@
+file = open("/share/data/day5/nucl-puzzle.txt")
+a = file.readlines()
+for x in range(len(a)):
+        a[x] = a[x].strip()
+f = a
+
+
+dict = {}
+for i in f:
+    dict[i] = 1
+b = []
+for i in dict.keys():
+    b.append(i)
+def findStart(i):
+    start = ""
+    for x in b:
+        rtn = x[:i]
+        for y in f:
+            if (rtn in y[1:]):
+                break
+            elif (y == f[len(f)-1]):
+                start = x
+    return start
+
+
+b = a
+
+start = findStart(10)
+final = ""
+final = final + start
+for i in range(len(f)):
+ for d in range(80):
+  if (final[len(final)-20] == b[i][d]):
+   if (final[len(final)-19] == b[i][d+1]):
+    if (final[len(final)-18] == b[i][d+2]):
+     if (final[len(final)-17] == b[i][d+3]):
+      if (final[len(final)-16] == b[i][d+4]):
+       if (final[len(final)-15] == b[i][d+5]):
+if (final[len(final)-14] == b[i][d+6]):
+  if (final[len(final)-13] == b[i][d+7]):
+         if (final[len(final)-12] == b[i][d+8]):
+       if (final[len(final)-11] == b[i][d+9]):
+              if (final[len(final)-10] == b[i][d+10]):
+           if (final[len(final)-9] == b[i][d+11]):
+                    if (final[len(final)-8] == b[i][d+12]):
+                if (final[len(final)-7] == b[i][d+13]):
+                                                                                     if (final[len(final)-5] == b[i][d+15]):
+                                                                                          if (final[len(final)-4] == b[i][d+16]):
+                                                                                               if (final[len(final)-3] == b[i][d+17]):
+                                                                                                    if (final[len(final)-2] == b[i][d+18]):
+                                                                                                         if (final[len(final)-1] == b[i][d+19]):
+                                                                                                              final = final + b[i][d+20:len(b[i])+1]
+
+for i in range(len(b)):
+ for d in range(85):
+  if (final[len(final)-15] == b[i][d]):
+   if (final[len(final)-14] == b[i][d+1]):
+    if (final[len(final)-13] == b[i][d+2]):
+     if (final[len(final)-12] == b[i][d+3]):
+      if (final[len(final)-11] == b[i][d+4]):
+       if (final[len(final)-10] == b[i][d+5]):
+        if (final[len(final)-9] == b[i][d+6]):
+         if (final[len(final)-8] == b[i][d+7]):
+          if (final[len(final)-7] == b[i][d+8]):
+           if (final[len(final)-6] == b[i][d+9]):
+            if (final[len(final)-5] == b[i][d+10]):
+             if (final[len(final)-3] == b[i][d+11]):
+              if (final[len(final)-2] == b[i][d+12]):
+               if (final[len(final)-1] == b[i][d+13]):
+                final = final + b[i][d+14:len(b[i])+1]
+#for i in range(len(b)):
+#     for d in range(13):
+#          if (final[len(final)-3] == b[i][d]):
+#               if (final[len(final)-2] == b[i][d+1]):
+#                    if (final[len(final)-1] == b[i][d+2]):
+#                         final = final + b[i][d+3:len(b[i])+1]
+
+
+          
+
+print final
